@@ -9,13 +9,15 @@ workflows:
       - name: Set iOS deployment target
         script: |
           cd ios
-          sed -i '' 's/platform :ios, '12.0'/platform :ios, '13.0'/g' Podfile
+          echo "Updating iOS deployment target to 13.0"
+          sed -i '' "s/platform :ios, '12.0'/platform :ios, '13.0'/" Podfile
           cd ..
       - flutter clean
       - flutter pub get
       - cd ios && pod install --repo-update && cd ..
     artifacts:
       - build/ios/ipa/**/*.ipa
+
 
 
 
