@@ -3,8 +3,8 @@ workflows:
     name: iOS Build
     max_build_duration: 120
     environment:
-      flutter: 3.29.2  # Specify Flutter version
-      xcode: 15.0       # Use the latest Xcode version
+      flutter: 3.29.2  # Set Flutter version
+      xcode: 15.0      # Use latest Xcode version
     scripts:
       - name: Set iOS deployment target
         script: |
@@ -13,9 +13,10 @@ workflows:
           cd ..
       - flutter clean
       - flutter pub get
-      - cd ios && pod install && cd ..
+      - cd ios && pod install --repo-update && cd ..
     artifacts:
       - build/ios/ipa/**/*.ipa
+
 
 
 
