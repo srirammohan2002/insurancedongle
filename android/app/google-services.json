@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "686335822745",
+    "firebase_url": "https://insurancedongle-18b94-default-rtdb.firebaseio.com",
+    "project_id": "insurancedongle-18b94",
+    "storage_bucket": "insurancedongle-18b94.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:686335822745:android:a5638ad4a6a7f52bdde108",
+        "android_client_info": {
+          "package_name": "com.example.insurancedongle"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5brE2jP7D6RGmFko_UzKhr44s5zpIbZY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
