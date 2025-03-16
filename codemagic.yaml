@@ -1,9 +1,30 @@
-scripts:
-  - name: Set iOS deployment target
-    script: |
-      cd ios
-      sed -i '' 's/platform :ios, '12.0'/platform :ios, '13.0'/g' Podfile
-      cd ..
-  - flutter clean
-  - flutter pub get
-  - cd ios && pod install && cd ..
+workflows:
+  insurance_dongle_build:
+    name: Insurance Dongle Build
+    instance_type: mac_mini_m1
+    max_build_duration: 120
+
+    environment:
+      flutter: stable
+      xcode: latest
+      cocoapods: default
+
+    scripts:
+      - name: Set iOS deployment target
+        script: |
+          cd ios
+          sed -i '' "s/platform :ios, '12.0'/platform :ios, '13.0'/g" Podfile
+          cd ..
+      - flutter clean
+      - flutter pub get
+      - cd ios && pod install && cd ..
+    
+    artifacts:
+      - build/**/outputs/**/*.apk
+      - build/ios/ipa/*.ipa
+
+    publishing:
+      email:
+        recipients:
+          - srirammohan2002@gmail.com  # Change this to your email
+
